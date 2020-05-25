@@ -12,7 +12,7 @@ public class WeatherDataModel {
     private String mIconName;
 
     // TODO: Create a WeatherDataModel from a JSON:
-    public static WeatherDataModel fronJson(JSONObject jsonObject){
+    public static WeatherDataModel fromJson(JSONObject jsonObject){
         try {
             WeatherDataModel weatherData = new WeatherDataModel();
 
@@ -20,7 +20,6 @@ public class WeatherDataModel {
             weatherData.mCondition = jsonObject.getJSONArray("weather").getJSONObject(0).getInt("id");
             weatherData.mIconName = updateWeatherIcon(weatherData.mCondition);
             double tempResult = jsonObject.getJSONObject("main").getDouble("temp") - 273.15;
-            int num;
             int roundValue = (int) Math.rint(tempResult);
             weatherData.mTemperature = Integer.toString(roundValue);
 
@@ -67,5 +66,15 @@ public class WeatherDataModel {
     // TODO: Create getter methods for temperature, city, and icon name:
 
 
+    public String getTemperature() {
+        return mTemperature + " °C";
+    }
 
+    public String getCity() {
+        return mCity;
+    }
+
+    public String getIconName() {
+        return mIconName;
+    }
 }
