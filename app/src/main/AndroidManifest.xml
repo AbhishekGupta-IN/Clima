@@ -3,7 +3,8 @@
     package="com.londonappbrewery.climapm"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -14,7 +15,7 @@
 
         <activity
             android:name=".WeatherController"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
